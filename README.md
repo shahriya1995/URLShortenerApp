@@ -1,7 +1,5 @@
 # URLShortener
-# Short URL Management System
-
-This system provides an HTTP-based RESTful API for managing short URLs and redirecting clients, similar to services like bit.ly or goo.gl.
+This system provides an HTTP-based RESTful API for managing short URLs and redirecting clients, similar to services like bit.ly or goo.gl. A simple URL shortener service built using Flask and MongoDB.
 
 ## System Overview
 The system consists of the following components:
@@ -13,19 +11,40 @@ The system consists of the following components:
 - MongoDB
 - Flask (Python package)
 
-## Setup
-1. Clone this repository.
-2. Make sure you have docker installed.
-3. docker-compose build 
-4. docker-compose up
+## Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/shahriya1995/URLShortenerApp.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd backend
+    docker-compose build
+    docker-compose up
+    ```
+3. Running on port - 8080
+
 
 ## API Endpoints
 - `POST /shorten`: Shorten a long URL.
 - `GET /<short_code>`: Redirect a short URL to the corresponding long URL.
 - `GET /<short_code>/access_counts/` Retrieve access counts for a short URL.
 
-## Testing
+## Testing [Postman or CURL to test the app]
 - Use Postman/ curl to test endpoints
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{"url": "http://google.com"}' http://localhost:8080/shorten
+    ```
+    ```bash
+    curl -X GET http://localhost:8080/NBoW08
+    ```
+    ```bash
+    curl -X GET http://localhost:8080/NBoW08/access_counts
+    ```
 
 ## Assumptions and Design Decisions
 1. We use MongoDB for persistence due to its scalability and performance.
