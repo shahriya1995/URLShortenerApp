@@ -27,6 +27,10 @@ The system consists of the following components:
     docker-compose up
     ```
 3. Running on port - 8080
+4. To run test cases
+   ```
+    docker-compose run test
+   ```
 
 
 ## API Endpoints
